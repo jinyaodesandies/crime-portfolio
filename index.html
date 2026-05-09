@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Jinyao DeSandies | Econ of Crime Portfolio</title>
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Tableau Embedding API v3 -->
+  <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="logo">Jinyao DeSandies</a>
+
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <p class="eyebrow">Pomona College · Economics · Econ 120</p>
+
+      <h1>Crime, Data, and Economic Analysis</h1>
+
+      <p class="hero-text">
+        I am Jinyao DeSandies, a freshman at Pomona College taking Econ 120:
+        Economics of Crime. This portfolio presents six Tableau dashboards
+        exploring different aspects of crime, with a focus on Florida and broader
+        patterns in criminal justice, violence, and public safety.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="button primary">View Dashboards</a>
+        <a href="resume.html" class="button secondary">View Resume</a>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="intro-section">
+      <h2>Portfolio Overview</h2>
+
+      <p>
+        These dashboards summarize different dimensions of crime and criminal justice,
+        including university campus crime, incarceration patterns, national crime trends,
+        gun violence, global terrorism, and an independent project analysis.
+      </p>
+    </section>
+
+    <section id="projects" class="projects-section">
+      <h2>Tableau Dashboard Projects</h2>
+
+      <article class="project-card">
+        <div class="project-copy">
+          <p class="project-number">Project 1</p>
+          <h3>Common Crimes in Florida’s University Campuses</h3>
+          <p>
+            This dashboard examines common types of crimes reported across university
+            campuses in Florida, helping compare public safety patterns across institutions.
+          </p>
+        </div>
+
+        <div class="tableau-frame">
+          <tableau-viz
+            src="https://public.tableau.com/views/Project1CampusCrimeinFlorida/CommonCrimesinFloridasUniversityCampuses"
+            toolbar="bottom"
+            hide-tabs
+            width="100%"
+            height="1127">
+          </tableau-viz>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-copy">
+          <p class="project-number">Project 2</p>
+          <h3>Incarceration in Florida</h3>
+          <p>
+            This dashboard explores incarceration in Florida, connecting criminal justice
+            outcomes with demographic, geographic, or institutional patterns.
+          </p>
+        </div>
+
+        <div class="tableau-frame">
+          <tableau-viz
+            src="https://public.tableau.com/views/Project2IncarcerationinFlorida/Dashboard"
+            toolbar="bottom"
+            hide-tabs
+            width="100%"
+            height="1127">
+          </tableau-viz>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-copy">
+          <p class="project-number">Project 3</p>
+          <h3>U.S. Crime Trends</h3>
+          <p>
+            This dashboard places crime trends in a broader national context, allowing
+            comparison across time, category, and geography.
+          </p>
+        </div>
+
+        <div class="tableau-frame">
+          <tableau-viz
+            src="https://public.tableau.com/views/USCrimeTrends_17733838628180/Dashboard1"
+            toolbar="bottom"
+            hide-tabs
+            width="100%"
+            height="1127">
+          </tableau-viz>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-copy">
+          <p class="project-number">Project 4</p>
+          <h3>Gun Violence in the U.S.</h3>
+          <p>
+            This dashboard focuses on gun violence as a public safety and criminal justice
+            issue, highlighting patterns that can be analyzed through economic and policy lenses.
+          </p>
+        </div>
+
+        <div class="tableau-frame">
+          <tableau-viz
+            src="https://public.tableau.com/views/Project4_17745109672220/GunViolenceintheUS"
+            toolbar="bottom"
+            hide-tabs
+            width="100%"
+            height="1127">
+          </tableau-viz>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-copy">
+          <p class="project-number">Project 5</p>
+          <h3>Global Terrorism</h3>
+          <p>
+            This dashboard examines terrorism through a global dataset, connecting violence,
+            geography, and political instability to broader questions about crime and security.
+          </p>
+        </div>
+
+        <div class="tableau-frame">
+          <tableau-viz
+            src="https://public.tableau.com/views/Project5GlobalTerrorism_17757957591510/Dashboard1"
+            toolbar="bottom"
+            hide-tabs
+            width="100%"
+            height="1127">
+          </tableau-viz>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-copy">
+          <p class="project-number">Project 6</p>
+          <h3>Independent Crime Analysis Project</h3>
+          <p>
+            This independent dashboard extends the course themes through a self-directed
+            analysis of crime-related data.
+          </p>
+        </div>
+
+        <div class="tableau-frame">
+          <tableau-viz
+            src="https://public.tableau.com/views/IndependantProjectUpload/Dashboard1"
+            toolbar="bottom"
+            hide-tabs
+            width="100%"
+            height="1127">
+          </tableau-viz>
+        </div>
+      </article>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <h2>Contact</h2>
+
+      <p>
+        For academic, research, or resume inquiries, contact me at:
+      </p>
+
+      <p>
+        <a href="mailto:your-email@example.com">your-email@example.com</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Jinyao DeSandies · Pomona College</p>
+  </footer>
+</body>
+</html>
