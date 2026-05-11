@@ -209,8 +209,8 @@ h3 {
 }
 
 .project-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: var(--project-bg);
+  border: 1px solid var(--project-border);
   border-radius: 28px;
   padding: 28px;
   margin: 28px 0;
@@ -224,7 +224,7 @@ h3 {
 
 .project-number {
   margin: 0 0 8px;
-  color: var(--accent);
+  color: var(--project-accent);
   font-family: Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -234,64 +234,108 @@ h3 {
 
 /* =========================================================
    PROJECT CARD COLOR THEMES
-   Edit these colors if you want each module to better match
-   the Tableau dashboard colors.
+
+   EDIT DASHBOARD COLORS HERE.
+
+   These colors are in the same order as the six dashboards:
+
+   1. rgb(246, 244, 232)
+   2. rgb(192, 192, 192)
+   3. rgb(180, 180, 180)
+   4. rgb(249, 245, 241)
+   5. rgb(238, 235, 232)
+   6. rgb(235, 235, 235)
+
+   --project-bg:
+      Main background color of the whole project card.
+
+   --project-frame-bg:
+      Background directly behind the Tableau dashboard.
+      This removes the old white padding effect.
+
+   --project-border:
+      Border around the project card and dashboard frame.
+
+   --project-accent:
+      Color for the small "Project 1", "Project 2", etc. label.
 ========================================================= */
 
+/* PROJECT 1: Florida Campus Crime */
 .project-campus {
-  background:
-    linear-gradient(135deg, rgba(219, 231, 243, 0.86), rgba(255, 255, 255, 0.96));
-  border-color: #b8cadc;
+  --project-bg: rgb(246, 244, 232);
+  --project-frame-bg: rgb(246, 244, 232);
+  --project-border: #d8d4c3;
+  --project-accent: #5f573a;
 }
 
+/* PROJECT 2: Florida Incarceration */
 .project-incarceration {
-  background:
-    linear-gradient(135deg, rgba(226, 216, 202, 0.88), rgba(255, 255, 255, 0.96));
-  border-color: #cdbda8;
+  --project-bg: rgb(192, 192, 192);
+  --project-frame-bg: rgb(192, 192, 192);
+  --project-border: #a8a8a8;
+  --project-accent: #3f3f3f;
 }
 
+/* PROJECT 3: U.S. Crime Trends */
 .project-us-crime {
-  background:
-    linear-gradient(135deg, rgba(222, 232, 219, 0.88), rgba(255, 255, 255, 0.96));
-  border-color: #bccdb9;
+  --project-bg: rgb(180, 180, 180);
+  --project-frame-bg: rgb(180, 180, 180);
+  --project-border: #9a9a9a;
+  --project-accent: #333333;
 }
 
+/* PROJECT 4: Gun Violence */
 .project-gun {
-  background:
-    linear-gradient(135deg, rgba(232, 218, 218, 0.88), rgba(255, 255, 255, 0.96));
-  border-color: #d4bbbb;
+  --project-bg: rgb(249, 245, 241);
+  --project-frame-bg: rgb(249, 245, 241);
+  --project-border: #ded2c8;
+  --project-accent: #6b4d3d;
 }
 
+/* PROJECT 5: Global Terrorism */
 .project-terrorism {
-  background:
-    linear-gradient(135deg, rgba(223, 219, 234, 0.88), rgba(255, 255, 255, 0.96));
-  border-color: #c5bed7;
+  --project-bg: rgb(238, 235, 232);
+  --project-frame-bg: rgb(238, 235, 232);
+  --project-border: #ccc5bf;
+  --project-accent: #5a5149;
 }
 
+/* PROJECT 6: Independent Crime Analysis */
 .project-independent {
-  background:
-    linear-gradient(135deg, rgba(218, 230, 226, 0.88), rgba(255, 255, 255, 0.96));
-  border-color: #b8ccc6;
+  --project-bg: rgb(235, 235, 235);
+  --project-frame-bg: rgb(235, 235, 235);
+  --project-border: #c4c4c4;
+  --project-accent: #4a4a4a;
 }
 
 /* =========================================================
    TABLEAU DASHBOARD AREA
-   Edit this section if dashboards look too wide, too narrow,
-   too tall, or not centered.
+
+   This section fixes the unwanted white padding.
+
+   Main changes:
+   1. The frame uses --project-frame-bg instead of white.
+   2. Padding is set to 0 so the dashboard sits flush.
+   3. The dashboard remains centered.
+   4. Overflow-x allows wide dashboards to scroll on small screens.
+
+   If you want a little colored breathing room around each dashboard,
+   change padding from 0 to 10px or 14px.
 ========================================================= */
 
 .tableau-frame {
   width: 100%;
   overflow-x: auto;
-  border: 1px solid var(--border);
+
+  border: 1px solid var(--project-border);
   border-radius: 20px;
-  padding: 18px;
+
+  padding: 0;
+  background: var(--project-frame-bg);
 
   display: flex;
   justify-content: center;
   align-items: flex-start;
-
-  background: rgba(255, 255, 255, 0.55);
 }
 
 .tableau-frame tableau-viz {
@@ -300,6 +344,7 @@ h3 {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+  background: var(--project-frame-bg);
 }
 
 /* =========================================================
@@ -388,371 +433,7 @@ h3 {
   }
 
   .tableau-frame {
-    padding: 12px;
-  }
-
-  h1 {
-    letter-spacing: -0.04em;
-  }
-
-  h2 {
-    font-size: 1.65rem;
-  }
-}  margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  background: var(--background);
-  color: var(--text);
-  line-height: 1.6;
-}
-
-a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* =========================================================
-   HEADER AND NAVIGATION
-   Edit this section if you want to change the top menu.
-========================================================= */
-
-.site-header {
-  background:
-    linear-gradient(rgba(247, 244, 239, 0.92), rgba(247, 244, 239, 0.96)),
-    radial-gradient(circle at top left, var(--accent-light), transparent 40%);
-  border-bottom: 1px solid var(--border);
-}
-
-.small-header {
-  min-height: auto;
-}
-
-.nav {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 24px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  font-weight: 700;
-  font-size: 1.05rem;
-  color: var(--heading);
-  letter-spacing: 0.02em;
-}
-
-.nav-links {
-  display: flex;
-  gap: 24px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.92rem;
-}
-
-.nav-links a {
-  color: var(--muted-text);
-}
-
-/* =========================================================
-   HERO SECTION
-   Edit this section if you want the homepage intro bigger,
-   smaller, tighter, or more spacious.
-========================================================= */
-
-.hero {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 80px 24px 96px;
-}
-
-.resume-hero {
-  padding-bottom: 72px;
-}
-
-.eyebrow {
-  margin: 0 0 14px;
-  color: var(--accent);
-  font-family: Arial, Helvetica, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.78rem;
-  font-weight: 700;
-}
-
-h1 {
-  max-width: 880px;
-  margin: 0;
-  color: var(--heading);
-  font-size: clamp(2.5rem, 6vw, 5.4rem);
-  line-height: 0.96;
-  letter-spacing: -0.05em;
-}
-
-.hero-text {
-  max-width: 760px;
-  margin-top: 28px;
-  color: var(--muted-text);
-  font-size: 1.18rem;
-}
-
-.hero-buttons {
-  margin-top: 34px;
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-.button {
-  display: inline-block;
-  padding: 12px 18px;
-  border-radius: 999px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.92rem;
-  font-weight: 700;
-  border: 1px solid var(--accent);
-}
-
-.button.primary {
-  background: var(--accent);
-  color: #ffffff;
-}
-
-.button.secondary {
-  color: var(--accent);
-  background: transparent;
-}
-
-/* =========================================================
-   MAIN LAYOUT
-========================================================= */
-
-main {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 56px 24px;
-}
-
-.intro-section,
-.contact-section,
-.resume-section {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  padding: 34px;
-  margin-bottom: 28px;
-  box-shadow: var(--shadow);
-}
-
-h2 {
-  margin: 0 0 16px;
-  color: var(--heading);
-  font-size: 2rem;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-}
-
-h3 {
-  margin: 0 0 8px;
-  color: var(--heading);
-  font-size: 1.35rem;
-  line-height: 1.2;
-}
-
-/* =========================================================
-   PROJECT MODULES
-   Edit this section if you want to change the spacing,
-   borders, or card shape around each dashboard.
-========================================================= */
-
-.projects-section {
-  margin-top: 48px;
-}
-
-.project-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 28px;
-  padding: 28px;
-  margin: 28px 0;
-  box-shadow: var(--shadow);
-}
-
-.project-copy {
-  max-width: 850px;
-  margin: 0 auto 24px;
-}
-
-.project-number {
-  margin: 0 0 8px;
-  color: var(--accent);
-  font-family: Arial, Helvetica, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.75rem;
-  font-weight: 700;
-}
-
-/* =========================================================
-   PROJECT CARD COLOR THEMES
-   Edit these colors if you want each module to better match
-   the Tableau dashboard colors.
-========================================================= */
-
-.project-campus {
-  background:
-    linear-gradient(135deg, rgba(219, 231, 243, 0.86), rgba(255, 255, 255, 0.96));
-  border-color: #b8cadc;
-}
-
-.project-incarceration {
-  background:
-    linear-gradient(135deg, rgba(226, 216, 202, 0.88), rgba(255, 255, 255, 0.96));
-  border-color: #cdbda8;
-}
-
-.project-us-crime {
-  background:
-    linear-gradient(135deg, rgba(222, 232, 219, 0.88), rgba(255, 255, 255, 0.96));
-  border-color: #bccdb9;
-}
-
-.project-gun {
-  background:
-    linear-gradient(135deg, rgba(232, 218, 218, 0.88), rgba(255, 255, 255, 0.96));
-  border-color: #d4bbbb;
-}
-
-.project-terrorism {
-  background:
-    linear-gradient(135deg, rgba(223, 219, 234, 0.88), rgba(255, 255, 255, 0.96));
-  border-color: #c5bed7;
-}
-
-.project-independent {
-  background:
-    linear-gradient(135deg, rgba(218, 230, 226, 0.88), rgba(255, 255, 255, 0.96));
-  border-color: #b8ccc6;
-}
-
-/* =========================================================
-   TABLEAU DASHBOARD AREA
-   Edit this section if dashboards look too wide, too narrow,
-   too tall, or not centered.
-========================================================= */
-
-.tableau-frame {
-  width: 100%;
-  overflow-x: auto;
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 18px;
-
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-
-  background: rgba(255, 255, 255, 0.55);
-}
-
-.tableau-frame tableau-viz {
-  display: block;
-  width: 850px;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* =========================================================
-   RESUME PAGE
-   Edit this section if you want the resume page wider,
-   narrower, or more compact.
-========================================================= */
-
-.resume-main {
-  max-width: 900px;
-}
-
-.resume-item {
-  border-top: 1px solid var(--border);
-  padding-top: 18px;
-  margin-top: 18px;
-}
-
-.resume-meta {
-  margin: 0 0 8px;
-  color: var(--muted-text);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.92rem;
-}
-
-.skill-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 0;
-  margin: 18px 0 0;
-  list-style: none;
-}
-
-.skill-list li {
-  background: var(--accent-light);
-  color: var(--accent-dark);
-  border-radius: 999px;
-  padding: 8px 12px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.9rem;
-  font-weight: 700;
-}
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-.footer {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 32px 24px 56px;
-  color: var(--muted-text);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.9rem;
-}
-
-/* =========================================================
-   MOBILE RESPONSIVE STYLES
-   Edit this section if the page looks awkward on phones.
-========================================================= */
-
-@media (max-width: 760px) {
-  .nav {
-    align-items: flex-start;
-    gap: 18px;
-    flex-direction: column;
-  }
-
-  .nav-links {
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-  .hero {
-    padding-top: 52px;
-    padding-bottom: 64px;
-  }
-
-  .intro-section,
-  .contact-section,
-  .resume-section,
-  .project-card {
-    padding: 22px;
-    border-radius: 20px;
-  }
-
-  .tableau-frame {
-    padding: 12px;
+    border-radius: 16px;
   }
 
   h1 {
