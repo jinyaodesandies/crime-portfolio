@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>{{ page.title }} | Jinyao DeSandies</title>
+
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+  <header class="site-header small-header">
+    <nav class="nav">
+      <a href="../index.html" class="logo">Jinyao DeSandies</a>
+
+      <div class="nav-links">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../writeups.html">Write-Ups</a>
+        <a href="../resume.html">Resume</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="writeup-page-main">
+    <section class="writeup-hero-card {{ page.project_class }}">
+      <p class="project-number">{{ page.project_number }}</p>
+
+      <h2>{{ page.title }}</h2>
+
+      <p>
+        {{ page.description }}
+      </p>
+
+      <div class="writeup-page-buttons">
+        <a href="../writeups.html" class="button secondary">Back to All Write-Ups</a>
+        <a href="../index.html#{{ page.dashboard_id }}" class="button secondary">Back to Dashboard</a>
+      </div>
+    </section>
+
+    <article class="writeup-article">
+      <div class="writeup-body">
+        {{ content }}
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Jinyao DeSandies · Pomona College</p>
+  </footer>
+</body>
+</html>
