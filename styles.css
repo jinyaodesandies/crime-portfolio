@@ -605,3 +605,112 @@ h3 {
     font-size: 1.65rem;
   }
 }
+
+/* =========================================================
+   INDIVIDUAL MARKDOWN WRITE-UP PAGES
+   Controls layout, double spacing, paragraph indentation,
+   and centered citations.
+========================================================= */
+
+.writeup-page-main {
+  max-width: 900px;
+}
+
+.writeup-hero-card {
+  background: var(--project-bg);
+  border: 1px solid var(--project-border);
+  border-radius: 28px;
+  padding: 34px;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow);
+}
+
+.writeup-page-buttons {
+  margin-top: 22px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.writeup-article {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 42px;
+  box-shadow: var(--shadow);
+}
+
+.writeup-body {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 2;
+}
+
+/* Main prose paragraphs:
+   - double spaced
+   - first-line indentation
+   - no extra paragraph gap, closer to formal paper formatting */
+.writeup-body p {
+  margin: 0;
+  line-height: 2;
+  text-indent: 2em;
+}
+
+/* Headings should not indent */
+.writeup-body h1,
+.writeup-body h2,
+.writeup-body h3,
+.writeup-body h4 {
+  text-indent: 0;
+  line-height: 1.35;
+}
+
+/* Space around the top title and section headings */
+.writeup-body h1 {
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.writeup-body h2 {
+  margin-top: 36px;
+  margin-bottom: 18px;
+}
+
+/* Center the Citations heading specifically */
+.writeup-body h2:has(+ .citations-section) {
+  text-align: center;
+}
+
+/* Citation block:
+   - centered
+   - double spaced
+   - preserves line breaks from your Markdown source */
+.citations-section {
+  text-align: center;
+  line-height: 2;
+  white-space: pre-line;
+  margin-top: 0;
+  font-size: 0.98rem;
+}
+
+/* No paragraph indentation inside citations, if Jekyll renders any paragraphs there */
+.citations-section p {
+  text-indent: 0;
+  text-align: center;
+  line-height: 2;
+  margin: 0;
+}
+
+/* Mobile adjustment */
+@media (max-width: 760px) {
+  .writeup-hero-card,
+  .writeup-article {
+    padding: 24px;
+    border-radius: 20px;
+  }
+
+  .writeup-body {
+    font-size: 1rem;
+  }
+}
